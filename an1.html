@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Cgpa Calculator</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+   		<header>
+   			<nav>
+   				<ul class="nav_ul">
+   					<a href="index.html"><li class="nav_li">Home</li></a>
+   					<a href="#"><li class="nav_li">The Dev</li></a>
+   					<a href="sign_up.html"><li class="nav_li">Cgpa Calc</li></a>
+   				</ul>
+   			</nav>
+   		</header>
+      <form style="">
+      	<label>MEE101</label>
+   			<input type="number" placeholder="Enter your grade in MEE101" name="grade" id="mee101" required><br/>
+   			<label>GNS101</label>
+      	<input  type="number"  id="gns101" placeholder="Enter your grade in GNS101" id="gns101" required><br/>
+      	<label>PHY101</label>
+      	<input type="number" placeholder="Enter your grade in PHY101" id="phy101" required><br/>
+      	<label>CHE101</label>
+      		<input type="number" id="che101" placeholder="Enter your grade in CHE101" required><br/>
+      	<input type="submit" name="submit" onclick="yourGrade()" value="Calculate Your Grade">
+   		</form>
+   		<script>
+   			
+   			
+   			function yourGrade(){
+   				var plus = 0.25;
+   			var grade = Number(document.getElementById("mee101").value) + Number( document.getElementById("phy101").value) + Number( document.getElementById("che101").value) + Number( document.getElementById("gns101").value);
+   			var grades = grade*plus;
+   				if (grade*plus >= 70){
+   					alert("You had an A grade. Congrat!" + " Your grade is: " + grades);
+   				}else if (grade*plus >= 60){
+   					alert("You had a B grade. Do not rest on your Oars" + " Your grade is: " + grades);
+   				}else if (grade*plus >= 50){
+   					alert("This is a C grade. Put more effort" + " Your grade is: " + grades);
+   				} else if (grade*plus >= 45){
+   					alert("This is a D grade. A red alert that you've not given your best." + " Your grade is: " + grades);
+   				} else if (grade*plus < 45){
+   					alert("Oops! This is a F grade. This signifies that You've failed or You've not inputted any value" + " Your Grade is: " + grades);
+   				}
+   				document.getElementById("result").innerHTML = grade*plus;
+   			}
+   			
+   			 
+   		</script>
+   </body>
+</html>
